@@ -1,0 +1,76 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.auth-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  margin: 0 0 34px;
+  padding: 0;
+  border: none;
+}
+
+.auth-form__input {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 2px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #D9DDE3;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.auth-form__input::placeholder {
+  color: #9AA0A6;
+}
+
+.auth-form__input:focus {
+  border-bottom-color: #FFCC00;
+}
+
+.auth-form__error {
+  align-self: flex-start;
+  margin: -16px 0 26px;
+  font-size: 12px;
+  color: #d32f2f;
+}
+
+.auth-form__button {
+  min-width: 200px;
+  padding: 14px 48px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  color: #9AA0A6;
+  background: #ECECEC;
+  border: none;
+  border-radius: 38px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.auth-form__button--active {
+  background: #FFCC00;
+  color: #1A1A1A;
+}
+
+@media (any-hover: hover) {
+  .auth-form__button--active:hover {
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 520px) {
+  .auth-form__button {
+    width: 100%;
+  }
+}

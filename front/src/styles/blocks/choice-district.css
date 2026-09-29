@@ -1,0 +1,451 @@
+/* =========================================================
+   CHOICE DISTRICT
+   ========================================================= */
+
+.choice-district__page {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal__choice-district {
+  box-sizing: border-box;
+  width: 455px;
+  height: 413px;
+  padding: 0 48px 27px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+}
+
+.choice-district__header {
+  height: 54px;
+  flex: 0 0 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn__delete {
+  min-height: 24px;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: 8px;
+  background: #334155;
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.btn__cross {
+  width: 18px;
+  height: 18px;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn__cross svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.choice-district__body {
+  width: 100%;
+  padding-top: 25px;
+}
+
+.choice-district__select {
+  position: relative;
+  width: 100%;
+}
+
+.choice-district__select summary {
+  list-style: none;
+}
+
+.choice-district__select summary::-webkit-details-marker {
+  display: none;
+}
+
+.choice-district__select-button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  padding: 0 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #94a3b8;
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.choice-district__chevron {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  margin-right: 3px;
+  border-right: 2px solid #cbd5e1;
+  border-bottom: 2px solid #cbd5e1;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--transition-time) ease;
+}
+
+.choice-district__select[open] .choice-district__chevron {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+.choice-district__options {
+  position: absolute;
+  z-index: 10;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f1f5f9;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.choice-district__option {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 42px;
+  padding: 0 17px;
+  display: flex;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  background: #f1f5f9;
+  color: #475569;
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.choice-district__option:last-child {
+  border-bottom: 0;
+}
+
+.choice-district__option:hover {
+  background: #e2e8f0;
+}
+
+.choice-district__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.choice-district__upload,
+.choice-district__open {
+  box-sizing: border-box;
+  height: 27px;
+  border: 0;
+  border-radius: 7px;
+  padding: 0 11px;
+  font-family: var(--font-family);
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.choice-district__upload {
+  background: #ffcc00;
+  color: #000000;
+}
+
+.choice-district__open {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.choice-district__upload:hover,
+.choice-district__open:hover {
+  opacity: 0.88;
+}
+
+.btn__delete:focus-visible,
+.btn__cross:focus-visible,
+.choice-district__select-button:focus-visible,
+.choice-district__option:focus-visible,
+.choice-district__upload:focus-visible,
+.choice-district__open:focus-visible {
+  outline: 1px solid #64748b;
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .choice-district__page {
+    padding: 12px;
+  }
+
+  .modal__choice-district {
+    width: 100%;
+    max-width: 455px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+/* =========================================================
+   DELETE DATA PANEL / CONFIRMATION
+   ========================================================= */
+
+.delete-panel {
+  position: absolute;
+  z-index: 30;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: 178px;
+  min-height: 112px;
+  padding: 12px 12px 10px;
+  display: none;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background: #334155;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+}
+
+.delete-panel.is-visible {
+  display: block;
+}
+
+.delete-panel__header {
+  margin-bottom: 9px;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.delete-panel__body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 9px;
+}
+
+.delete-panel__district {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 8px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.delete-panel__district input {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  accent-color: #ef4444;
+  cursor: pointer;
+}
+
+.delete-panel__button {
+  width: 45px;
+  height: 17px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: #ef4444;
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-panel__button:hover,
+.delete-confirm__delete:hover {
+  background: #dc2626;
+}
+
+.delete-confirm {
+  position: fixed;
+  z-index: 40;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: 295px;
+  min-height: 146px;
+  padding: 25px 24px 20px;
+  display: none;
+  transform: translate(-50%, -50%);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.2);
+  text-align: center;
+}
+
+.delete-confirm.is-visible {
+  display: block;
+}
+
+.delete-confirm__title {
+  margin-bottom: 18px;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.delete-confirm__text {
+  margin: 0 0 25px;
+  color: #475569;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.delete-confirm__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.delete-confirm__delete,
+.delete-confirm__cancel {
+  width: 80px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  font-family: var(--font-family);
+  font-size: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-confirm__delete {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.delete-confirm__cancel {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.delete-confirm__cancel:hover {
+  background: #cbd5e1;
+}
+
+@media (max-width: 520px) {
+  .choice-district__page {
+    min-height: 100dvh;
+    padding: 12px;
+  }
+
+  .modal__choice-district {
+    width: min(100%, 455px);
+    height: auto;
+    min-height: 360px;
+    padding: 0 24px 24px;
+    border-radius: 14px;
+  }
+
+  .choice-district__header {
+    height: 50px;
+    flex-basis: 50px;
+  }
+
+  .btn__delete {
+    max-width: calc(100% - 32px);
+    padding: 6px 9px;
+    font-size: 8px;
+  }
+
+  .choice-district__body {
+    padding-top: 20px;
+  }
+
+  .choice-district__select-button {
+    height: 44px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+
+  .choice-district__option {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+
+  .choice-district__footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .choice-district__upload,
+  .choice-district__open {
+    height: 30px;
+    font-size: 8px;
+  }
+
+  .choice-district__open {
+    margin-left: auto;
+  }
+
+  .delete-panel {
+    width: min(178px, calc(100vw - 40px));
+  }
+
+  .delete-confirm {
+    width: min(295px, calc(100vw - 32px));
+    padding: 23px 20px 19px;
+  }
+}
+
+@media (max-width: 390px) {
+  .modal__choice-district {
+    min-height: 330px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .choice-district__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .choice-district__upload,
+  .choice-district__open {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .delete-confirm__actions {
+    gap: 12px;
+  }
+}

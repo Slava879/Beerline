@@ -1,0 +1,196 @@
+@keyframes fx-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fx-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fx-pop {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fx-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(21, 128, 61, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(21, 128, 61, 0); }
+}
+
+.menu__distributed-card-status,
+.menu__close-card-status {
+  border-radius: 999px;
+}
+
+$card-lists: (
+  ".menu__masters-cards",
+  ".menu__unallocated-cards",
+  ".menu__distributed-cards",
+  ".menu__applications-cards"
+);
+
+@each $list in $card-lists {
+  #{$list} > * {
+    animation: fx-fade-up 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  }
+  @for $i from 2 through 6 {
+    #{$list} > :nth-child(#{$i}) {
+      animation-delay: ($i - 1) * 0.06s;
+    }
+  }
+}
+
+.urgent-modal .overlay,
+.engineer-modal .main-container {
+  background-color: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  animation: fx-fade-in 0.2s ease;
+}
+
+.urgent-modal .modal,
+.engineer-modal .modal-card {
+  animation: fx-pop 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.urgent-modal .form-input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.18);
+}
+
+.engineer-modal .status-badge .dot,
+.engineer-modal .req-status.green .dot {
+  animation: fx-pulse 1.8s ease-out infinite;
+}
+
+:is(.urgent-modal, .engineer-modal) .close-btn {
+  transition: transform 0.25s ease, color 0.2s ease;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
+:is(.layout, .urgent-modal, .engineer-modal) {
+
+  .menu__button-opt,
+  .menu__button-plan,
+  .menu__button-request,
+  .menu__button-confirmation,
+  .menu__button-change,
+  .menu__footer-button,
+  .menu__footer-button-revoke,
+  .priority-btn,
+  .btn-submit,
+  .btn-cancel,
+  .btn-yellow,
+  .btn-outline,
+  .btn-red,
+  .btn-dark {
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      filter 0.18s ease,
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      color 0.18s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+      filter: brightness(1.04);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.97);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.16);
+      filter: brightness(0.96);
+    }
+  }
+
+  .menu__button-opt,
+  .menu__button-confirmation,
+  .menu__footer-button-start,
+  .btn-yellow {
+    &:hover { box-shadow: 0 8px 18px rgba(255, 204, 0, 0.5); }
+  }
+
+  .menu__button-request,
+  .btn-submit {
+    &:hover { box-shadow: 0 8px 18px rgba(0, 230, 118, 0.45); }
+  }
+
+  .menu__footer-button-revoke,
+  .btn-red {
+    &:hover { box-shadow: 0 8px 18px rgba(220, 38, 38, 0.4); }
+  }
+
+  .menu__masters-button,
+  .menu__applications-button {
+    transition: opacity 0.18s ease;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    &:active { opacity: 0.7; }
+  }
+
+  .menu__no-active-applications-button {
+    transition: opacity 0.18s ease;
+
+    &:hover { opacity: 0.85; }
+  }
+
+  .menu__masters-card,
+  .menu__masters-card--disabled {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+    }
+  }
+
+  .menu__unallocated-card,
+  .menu__distributed-card,
+  .menu__open-card,
+  .menu__close-card,
+  .request-item,
+  .device-item {
+    transition: box-shadow 0.2s ease;
+
+    &:hover { box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); }
+  }
+
+  .header__link-profile {
+    transition: filter 0.2s ease;
+
+    img { transition: transform 0.2s ease; }
+
+    &:hover {
+      filter: brightness(0.94);
+      img { transform: scale(1.08); }
+    }
+  }
+
+  .header__link-logo {
+    img { transition: transform 0.25s ease; }
+
+    &:hover img { transform: rotate(-8deg) scale(1.08); }
+  }
+
+  button:focus-visible {
+    outline: 2px solid #0284c7;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

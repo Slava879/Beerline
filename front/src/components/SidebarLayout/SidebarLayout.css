@@ -1,0 +1,30 @@
+.layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* временная заглушка вместо карты */
+.layout__map {
+  flex: 1;
+  background-color: #e2e8f0;
+}
+
+.menu__section {
+  min-height: 100vh;
+}
+
+.menu__container {
+  width: 100%;
+  max-width: 736px;
+  min-height: 100vh;
+}
+
+.menu__main {
+  background-color: var(--bg-main-color);
+  padding-top: 27px;
+  padding-inline: 20px;
+}
+
+.menu__main .menu__container {
+  min-height: 0;
+}

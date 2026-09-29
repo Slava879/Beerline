@@ -1,0 +1,352 @@
+.engmenu-main-container {
+    flex: 1;
+    background-color: #64748b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.engmenu-modal-card {
+    background-color: #ffffff;
+    width: 720px;
+    height: 660px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.engmenu-card-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+.engmenu-card-header::after {
+    content: '';
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 0;
+    height: 1px;
+    background-color: #e5e7eb;
+}
+
+.engmenu-user-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.engmenu-avatar {
+    width: 48px;
+    height: 48px;
+    background-color: #F1F5F9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0284c7;
+    font-size: 20px;
+    position: relative;
+}
+.engmenu-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;   
+    right: 2px;   
+    width: 12px;  
+    height: 12px;
+    background-color: #15803D; 
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.engmenu-user-details h1 {
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.engmenu-user-details p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.engmenu-close-btn {
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #CBD5E1;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+}
+
+.engmenu-close-btn:hover {
+    color: #4b5563;
+}
+
+.engmenu-card-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    padding: 25px;
+    flex: 1;
+}
+
+.engmenu-left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+    gap: 20px;
+    border: 1px solid #CBD5E1;
+    border-radius: 15px;
+    background-color: #F8FAFC;
+    padding: 6px 16px;
+}
+
+.engmenu-label {
+    font-size: 10px;
+    color: #64748B;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 7px;
+}
+.engmenu-label-requests{
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #64748B;
+    font-weight: bold;
+}
+.engmenu-label-uppercase {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #64748B;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 7px;
+}
+.engmenu-status-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.engmenu-status-badge {
+    background-color: #DCFCE7;
+    color: #15803D;
+    border: 1px solid #BBF7D0;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.engmenu-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #15803D;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.engmenu-location-block p {
+    font-weight: bold;
+    color: #0F172A;
+    font-size: 11px;
+}
+
+.engmenu-requests-block {   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 5px;
+}
+
+.engmenu-request-item {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.engmenu-request-item.active {
+    border-color: #CBD5E1;
+    background-color: #ffffff;
+}
+
+.engmenu-req-header {
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.engmenu-req-status {
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.engmenu-req-status.green {
+    color: #16A34A;
+    font-weight: bold;
+}
+
+.engmenu-req-status.gray {
+    color: #64748B;
+}
+
+.engmenu-right-col {
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+.engmenu-right-col-body{
+    display: flex;         
+    flex-direction: column;
+    gap: 5px;
+}
+
+.engmenu-label-right-col{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #0F172A;
+    font-weight: bold;
+}
+
+.engmenu-equipment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.engmenu-btn-yellow {
+    background-color: #FFCC00;
+    color: #000000;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.engmenu-sub-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #94A3B8;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.engmenu-device-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    background-color: #fff;
+}
+
+.engmenu-device-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.engmenu-device-info strong {
+    font-size: 11px;
+    color: #0F172A;
+}
+
+.engmenu-sn {
+    font-size: 9px;
+    color: #64748B;
+}
+
+.engmenu-text-green {
+    color: #16A34A;
+    font-weight: bold;
+}
+
+.engmenu-device-qty {
+    background-color: #16A34A;
+    color: #E2E8F0;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.engmenu-card-footer {
+    border-top: 1px solid #F1F5F9;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.engmenu-btn-outline {
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
+    color: #334155;
+    padding: 12px 11px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.engmenu-btn-outline:hover {
+    background-color: #e2e5eb;
+}
+
+.engmenu-footer-right {
+    display: flex;
+    gap: 12px;
+}
+
+.engmenu-btn-red {
+    background-color: #EF4444;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.engmenu-btn-red:hover {
+    background-color: #dc2626;
+}
+
+.engmenu-btn-dark {
+    background-color: #0F172A;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.engmenu-btn-dark:hover {
+    background-color: #2e3952;
+}

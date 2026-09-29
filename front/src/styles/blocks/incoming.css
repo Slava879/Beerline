@@ -1,0 +1,122 @@
+/* Входящие заявки — тосты поверх карты в углу экрана */
+.incoming {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: min(360px, calc(100vw - 40px));
+    pointer-events: none;
+}
+
+.incoming__toast {
+    pointer-events: auto;
+    border-radius: 15px;
+    padding: 14px 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+    animation: incoming-slide-in 0.35s ease-out;
+    backdrop-filter: blur(4px);
+}
+
+.incoming__toast--urgent {
+    background-color: #7f1d1d;
+    border: 2px solid #ef4444;
+    color: #fecaca;
+}
+
+.incoming__toast--normal {
+    background-color: #14532d;
+    border: 2px solid #22c55e;
+    color: #bbf7d0;
+}
+
+.incoming__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.incoming__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.incoming__toast--urgent .incoming__title {
+    color: #fca5a5;
+}
+
+.incoming__toast--normal .incoming__title {
+    color: #86efac;
+}
+
+.incoming__close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.incoming__close:hover {
+    color: #fff;
+}
+
+.incoming__row {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.incoming__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.incoming__time {
+    font-size: 11px;
+    opacity: 0.85;
+}
+
+.incoming__accept {
+    background-color: #00e676;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.incoming__accept:hover {
+    background-color: #019f53;
+}
+
+@keyframes incoming-slide-in {
+    from {
+        transform: translateX(calc(100% + 24px));
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .incoming {
+        top: 12px;
+        right: 12px;
+        width: calc(100vw - 24px);
+    }
+}

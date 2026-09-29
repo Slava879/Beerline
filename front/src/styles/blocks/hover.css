@@ -1,0 +1,116 @@
+/* =========================================================
+   PROJECT-WIDE HOVERS
+   Единый мягкий hover для интерактивных элементов проекта.
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  /* Общий принцип: лёгкое затемнение + небольшое поднятие. */
+  .header__button--light,
+  .header__button--no-active,
+  .menu__button-opt,
+  .menu__button-plan,
+  .menu__button-request,
+  .menu__masters-button,
+  .menu__unallocated-applications-button,
+  .menu__button-confirmation,
+  .menu__button-change,
+  .menu__footer-button,
+  .menu__footer-button-revoke,
+  .menu__applications-button,
+  .btn-yellow,
+  .btn-submit,
+  .btn-cancel,
+  .priority-btn,
+  .assign-master-cancel-btn,
+  .reassign-footer-back,
+  .reassign-footer-auto,
+  .choice-district__select-button,
+  .choice-district__upload,
+  .choice-district__open,
+  .btn__delete,
+  .delete-confirm__delete,
+  .delete-confirm__cancel {
+    transition: opacity var(--transition-time) ease,
+                background-color var(--transition-time) ease,
+                color var(--transition-time) ease,
+                box-shadow var(--transition-time) ease,
+                transform var(--transition-time) ease;
+  }
+
+  .header__button--light:hover,
+  .header__button--no-active:hover,
+  .menu__button-opt:hover,
+  .menu__button-plan:hover,
+  .menu__button-request:hover,
+  .menu__masters-button:hover,
+  .menu__unallocated-applications-button:hover,
+  .menu__button-confirmation:hover,
+  .menu__button-change:hover,
+  .menu__footer-button:hover,
+  .menu__footer-button-revoke:hover,
+  .menu__applications-button:hover,
+  .btn-yellow:hover,
+  .assign-master-cancel-btn:hover,
+  .reassign-footer-back:hover,
+  .reassign-footer-auto:hover,
+  .choice-district__upload:hover,
+  .choice-district__open:hover,
+  .btn__delete:hover,
+  .delete-confirm__delete:hover,
+  .delete-confirm__cancel:hover {
+    opacity: 0.78;
+    transform: translateY(-1px);
+  }
+
+  /* Элементы выбора остаются на месте, меняется только фон/цвет. */
+  .priority-btn:hover,
+  .choice-district__select-button:hover {
+    background-color: #e2e8f0;
+  }
+
+  .priority-btn.active:hover {
+    background-color: #fee2e2;
+  }
+
+  /* Иконки закрытия — без подъёма, только мягкое изменение цвета. */
+  .close-btn,
+  .reassign-header-close,
+  .assign-master-close-btn,
+  .btn__cross {
+    transition: color var(--transition-time) ease,
+                opacity var(--transition-time) ease,
+                transform var(--transition-time) ease;
+  }
+
+  .close-btn:hover,
+  .reassign-header-close:hover,
+  .assign-master-close-btn:hover,
+  .btn__cross:hover {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+
+  /* Ссылки/иконки профиля и логотипа. */
+  .header__link-logo,
+  .header__link-profile,
+  .profile__header-link {
+    transition: opacity var(--transition-time) ease,
+                transform var(--transition-time) ease;
+  }
+
+  .header__link-logo:hover,
+  .header__link-profile:hover,
+  .profile__header-link:hover {
+    opacity: 0.82;
+    transform: translateY(-1px);
+  }
+
+}
+
+/* Неактивные элементы не получают hover-эффект. */
+button:disabled,
+.menu__masters-card--disabled,
+.reassign-card-dmitry-disabled-btn,
+.assign-master-card-dmitry-btn {
+  transition: none;
+}

@@ -1,0 +1,381 @@
+.assign-master-modal {
+    background: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    border: 1.5px solid #27272A;
+    border-radius: 16px;
+    padding: 11px 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.assign-master-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #D9D9D9;
+}
+.assign-master-title {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 6px;
+}
+.assign-master-subtitle {
+    font-size: 12px;
+    color: #A1A1AA;
+}
+.assign-master-close-btn {
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #71717A;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+}
+
+.assign-master-search-wrapper { width: 100%; }
+.assign-master-search-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #3F3F46;
+    background-color: #F8FAFC;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #71717A;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.assign-master-search-input:focus { border: 2px solid #080809; }
+
+.assign-master-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.assign-master-chip {
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.assign-master-chip-recommended { background-color: #FFCC00; color: #000; font-weight: bold; }
+.assign-master-chip-car,
+.assign-master-chip-stock {
+    background-color: #CBD5E1;
+    color: #000;
+    border: 1px solid #3F3F46;
+}
+
+.assign-master-list-label {
+    font-size: 10px;
+    color: #71717A;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.assign-master-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.assign-master-card-ivan {
+    border: 1.5px solid #FFCC00;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    gap: 16px;
+    background-color: #F6F6F6;
+}
+.assign-master-card-ivan-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.assign-master-card-ivan-name-group {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.assign-master-card-ivan-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background-color: #22C55E;
+}
+.assign-master-card-ivan-name {
+    font-weight: 700;
+    font-size: 15px; 
+    color: #FFCC00;
+}
+.assign-master-card-ivan-badge {
+    font-size: 10px; 
+    padding: 4px 15px; 
+    border-radius: 4px;
+    font-weight: bold; 
+    background-color: #22C55E; 
+    color: #F6F6F6;
+}
+.assign-master-card-ivan-icon{
+    color: initial;        
+    -webkit-text-fill-color: initial;
+}
+.assign-master-card-ivan-detail {
+    font-size: 11px; 
+    color: #FFCC00;
+    display: flex; 
+    align-items: center; 
+    gap: 1px;
+}
+.assign-master-card-ivan-skills {
+    display: flex; 
+    gap: 7px; 
+    flex-wrap: wrap; 
+}
+.assign-master-card-ivan-skill-tag {
+    font-size: 10px; 
+    padding: 4px 6px; 
+    border-radius: 4px;
+    display: flex; 
+    min-width: 190px;
+    justify-content: flex-start;
+    align-items: center; gap: 4px;
+    background-color: #00E676; 
+    border: 1px solid #FFCC00;
+    color: #F6F6F6;
+}
+.assign-master-card-ivan-right {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 110px;
+}
+.assign-master-card-ivan-distance {
+    text-align: right; 
+}
+.assign-master-card-ivan-km {
+    font-weight: 700;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    color: #FFCC00;
+}
+.assign-master-card-ivan-eta {
+    font-size: 10px;
+    color: #FFCC00;
+}
+.assign-master-card-ivan-btn {
+    padding: 8px 25px; 
+    border-radius: 6px; 
+    border: none;
+    font-weight: 700; 
+    font-size: 11px; 
+    cursor: pointer;
+    width: 100%; 
+    text-align: center;
+    background-color: #FFCC00; 
+    color: #000;
+}
+.assign-master-card-ivan-btn:hover { opacity: 0.7; }
+
+.assign-master-card-alexey {
+    border: 1px solid #27272A;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    background-color: #F6F6F6;
+}
+.assign-master-card-alexey-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.assign-master-card-alexey-name-group {
+    display: flex; 
+    align-items: center; 
+    gap: 7px;
+}
+.assign-master-card-alexey-dot {
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%;
+    background-color: #22C55E;
+}
+.assign-master-card-alexey-name {
+    font-weight: 700;
+    font-size: 15px; 
+    color: #000;
+}
+.assign-master-card-alexey-detail {
+    font-size: 11px; 
+    color: #A1A1AA;
+    display: flex; 
+    align-items: center; 
+    gap: 1px;
+}
+.assign-master-card-alexey-detail>b{
+    color:#000;
+}
+.assign-master-card-alexey-icon{
+    color: initial;        
+    -webkit-text-fill-color: initial;
+}
+.assign-master-card-alexey-skills {
+    display: flex; 
+    gap: 7px; 
+    flex-wrap: wrap;
+}
+.assign-master-card-alexey-skill-tag {
+    font-size: 10px; 
+    padding: 4px 6px; 
+    border-radius: 4px;
+    display: flex; 
+    min-width: 190px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    background-color: #EF4444; 
+    color: #F6F6F6;
+}
+.assign-master-card-alexey-right {
+    font-family: Inter, sans-serif;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 110px;
+}
+.assign-master-card-alexey-distance {
+    text-align: right;
+}
+.assign-master-card-alexey-km {
+    font-weight: 700; 
+    font-size: 13px; 
+    color: #A1A1AA;
+}
+.assign-master-card-alexey-eta {
+    font-size: 10px; 
+    color: #A1A1AA;
+}
+.assign-master-card-alexey-btn {
+    padding: 8px 25px; 
+    border-radius: 6px; 
+    border: 1px solid #3F3F46;
+    font-weight: 700; 
+    font-size: 11px; 
+    cursor: pointer;
+    width: 100%; 
+    text-align: center;
+    background-color: #CBD5E1; 
+    color: #000;
+}
+.assign-master-card-alexey-btn:hover { opacity: 0.7; }
+
+.assign-master-card-dmitry {
+    border: 1px solid #27272A;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    background-color: #F6F6F6;
+}
+.assign-master-card-dmitry-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.assign-master-card-dmitry-name-group {
+    display: flex; 
+    align-items: center; 
+    gap: 7px;
+}
+.assign-master-card-dmitry-dot {
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%;
+    background-color: #ef4444;
+}
+.assign-master-card-dmitry-name {
+    font-weight: 700;
+    font-size: 15px; 
+    color: #000;
+}
+.assign-master-card-dmitry-detail {
+    font-size: 11px; 
+    color: #A1A1AA;
+    display: flex; 
+    align-items: center; 
+    gap: 1px;
+}
+.assign-master-card-dmitry-detail>b{
+    color:#EF4444;
+}
+.assign-master-card-dmitry-icon{
+    color: initial;        
+    -webkit-text-fill-color: initial;
+}
+.assign-master-card-dmitry-right {
+    display: flex; 
+    font-family: Inter, sans-serif;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 110px;
+}
+.assign-master-card-dmitry-distance {
+    text-align: right;
+}
+.assign-master-card-dmitry-km {
+    font-weight: 700; 
+    font-size: 13px; 
+    color: #ef4444;
+}
+.assign-master-card-dmitry-eta {
+    font-size: 10px; 
+    color: #ef4444;
+}
+.assign-master-card-dmitry-btn {
+    padding: 8px 25px; 
+    border-radius: 6px; 
+    font-weight: 700; 
+    font-size: 11px; 
+    cursor: pointer;
+    width: 100%; 
+    text-align: center;
+    background-color: #CBD5E1; 
+    color: #000;
+    border: none;
+    cursor: not-allowed;
+    color: #71717A;
+}
+
+.assign-master-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 69px;
+    padding-top: 12px;
+    border-top: 1px solid #27272A;
+}
+.assign-master-cancel-btn {
+    background-color: #CBD5E1;
+    color: #000;
+    font-size: 11px;
+    padding: 10px 40px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+.assign-master-hint {
+    font-size: 11px;
+    color: #71717A;
+}

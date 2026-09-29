@@ -1,0 +1,332 @@
+/* ============================================================
+   Модалка «Выбор участка»
+   ============================================================ */
+
+.cdm__page {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, .55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.cdm {
+    position: relative;
+    width: min(760px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 24px;
+    padding: 32px 36px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, .35);
+}
+
+/* ---------- Шапка ---------- */
+.cdm__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.cdm__title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+    line-height: 1.15;
+}
+
+.cdm__subtitle {
+    font-size: 14px;
+    color: #94A3B8;
+    margin: 6px 0 0;
+}
+
+.cdm__close {
+    border: none;
+    background: #F1F5F9;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background .15s ease;
+}
+.cdm__close:hover { background: #E2E8F0; }
+
+/* ---------- Секции ---------- */
+.cdm__section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cdm__section--address {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 22px 24px;
+}
+
+.cdm__section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+/* ---------- Селект района ---------- */
+.cdm__select-wrap { position: relative; }
+
+.cdm__select {
+    width: 100%;
+    background: #fff;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 18px 22px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0F172A;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.cdm__select:hover { border-color: #CBD5E1; }
+.cdm__select:focus { outline: none; }
+.cdm__select--open {
+    border-color: #22C55E;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, .15);
+}
+
+.cdm__select-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cdm__chevron {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #94A3B8;
+    border-bottom: 2px solid #94A3B8;
+    transform: rotate(45deg);
+    transition: transform .15s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+.cdm__chevron--open { transform: rotate(-135deg); }
+
+.cdm__options {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, .18);
+    z-index: 5;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.cdm__option {
+    width: 100%;
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0F172A;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: background .15s ease;
+}
+.cdm__option:hover { background: #F1F5F9; }
+.cdm__option--active { background: #DCFCE7; color: #166534; font-weight: 600; }
+.cdm__option--error { color: #B91C1C; }
+
+.cdm__option-count {
+    background: #E5E7EB;
+    color: #64748B;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 2px 10px;
+    min-width: 32px;
+    text-align: center;
+}
+
+/* ---------- Сетка адреса ---------- */
+.cdm__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.cdm__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.cdm__field--wide { grid-column: span 3; }
+
+.cdm__field-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+    letter-spacing: .02em;
+}
+
+.cdm__input {
+    width: 100%;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: #0F172A;
+    background: #fff;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.cdm__input:focus {
+    border-color: #22C55E;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, .15);
+}
+
+/* ---------- Уведомления ---------- */
+.cdm__notice {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+.cdm__notice--ok    { background: #ECFDF5; color: #065F46; }
+.cdm__notice--error { background: #FEF2F2; color: #991B1B; }
+
+/* ---------- Кнопки ---------- */
+.cdm__btn {
+    border: none;
+    border-radius: 14px;
+    padding: 16px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: filter .15s ease, transform .15s ease, background .15s ease;
+    white-space: nowrap;
+}
+.cdm__btn:not(:disabled):hover { filter: brightness(.95); transform: translateY(-1px); }
+.cdm__btn:disabled { opacity: .55; cursor: not-allowed; }
+
+.cdm__btn--save    { align-self: flex-start; background: #22C55E; color: #fff; }
+.cdm__btn--yellow  { background: #FACC15; color: #0F172A; }
+.cdm__btn--green   { background: #22C55E; color: #fff; }
+.cdm__btn--red     { background: #EF4444; color: #fff; }
+.cdm__btn--ghost   { background: #F1F5F9; color: #0F172A; }
+
+/* ---------- Футер ---------- */
+.cdm__footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding-top: 4px;
+}
+
+/* ---------- Внутренние диалоги (удаление) ---------- */
+.cdm__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    background: rgba(15, 23, 42, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.cdm__dialog {
+    background: #fff;
+    border-radius: 20px;
+    padding: 26px 28px;
+    width: min(440px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, .35);
+}
+
+.cdm__dialog-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.cdm__dialog-text {
+    font-size: 14px;
+    color: #64748B;
+    margin: 0;
+}
+
+.cdm__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #0F172A;
+    padding: 8px 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color .15s ease, background .15s ease;
+}
+.cdm__checkbox:hover { border-color: #CBD5E1; background: #F8FAFC; }
+.cdm__checkbox input { width: 18px; height: 18px; accent-color: #22C55E; }
+
+.cdm__dialog-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+}
+.cdm__dialog-actions .cdm__btn {
+    padding: 13px 16px;
+    font-size: 14px;
+}
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 640px) {
+    .cdm { padding: 22px 20px 20px; border-radius: 18px; }
+    .cdm__title { font-size: 22px; }
+    .cdm__grid { grid-template-columns: repeat(2, 1fr); }
+    .cdm__field--wide { grid-column: span 2; }
+    .cdm__footer { grid-template-columns: 1fr; }
+    .cdm__dialog-actions { grid-template-columns: 1fr; }
+}

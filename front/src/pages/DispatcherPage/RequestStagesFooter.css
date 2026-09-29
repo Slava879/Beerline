@@ -1,0 +1,190 @@
+/* ============================================================
+   Этапы работы внутри карточки распределённой заявки
+   ============================================================ */
+
+.stages-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* --- Ряд из 3 кнопок-этапов --- */
+
+.stages-footer__stages {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.stages-footer__stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    min-height: 64px;
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: #F8FAFC;
+
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+
+    transition: background .15s ease, border-color .15s ease,
+                transform .1s ease, box-shadow .15s ease;
+}
+
+.stages-footer__stage:not(:disabled):hover {
+    transform: translateY(-1px);
+}
+
+.stages-footer__stage:disabled {
+    cursor: default;
+}
+
+.stages-footer__stage-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0F172A;
+}
+
+.stages-footer__stage-hint {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #64748B;
+}
+
+/* --- Пройденный этап: серая с рамкой --- */
+
+.stages-footer__stage--done {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+.stages-footer__stage--done .stages-footer__stage-label {
+    color: #334155;
+}
+.stages-footer__stage--done .stages-footer__stage-hint {
+    color: #16A34A;
+}
+
+/* --- Текущий этап: жёлтая --- */
+
+.stages-footer__stage--current {
+    background: #FACC15;
+    border-color: #EAB308;
+    box-shadow: 0 2px 8px rgba(234, 179, 8, .35);
+}
+.stages-footer__stage--current:hover {
+    background: #EAB308;
+}
+.stages-footer__stage--current .stages-footer__stage-label {
+    color: #1F2937;
+}
+.stages-footer__stage--current .stages-footer__stage-hint {
+    color: #4B5563;
+}
+
+/* --- Будущий этап: бледно-серый --- */
+
+.stages-footer__stage--future {
+    background: #F8FAFC;
+    border-color: #E5E7EB;
+    opacity: .7;
+}
+.stages-footer__stage--future .stages-footer__stage-label {
+    color: #94A3B8;
+}
+.stages-footer__stage--future .stages-footer__stage-hint {
+    color: #CBD5E1;
+}
+
+/* ============================================================
+   Нижний ряд действий — по центру
+   ============================================================ */
+
+.stages-footer__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.stages-footer__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 12px;
+    padding: 12px 22px;
+    min-height: 48px;
+    min-width: 220px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+
+    cursor: pointer;
+    transition: background .15s ease, transform .1s ease,
+                box-shadow .15s ease, filter .15s ease;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.stages-footer__action:not(:disabled):active {
+    transform: translateY(1px);
+}
+
+/* Призрачная — «Изменить мастера» */
+.stages-footer__action--ghost {
+    background: #F1F5F9;
+    color: #0F172A;
+    border: 1px solid #E2E8F0;
+}
+.stages-footer__action--ghost:not(:disabled):hover {
+    background: #E2E8F0;
+    border-color: #CBD5E1;
+}
+
+/* Красная — «Клиент отменил заявку» */
+.stages-footer__action--cancel {
+    background: #DC2626;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, .3);
+}
+.stages-footer__action--cancel:not(:disabled):hover {
+    background: #B91C1C;
+    box-shadow: 0 3px 10px rgba(220, 38, 38, .4);
+}
+
+.stages-footer__action:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ============================================================
+   Мобильный фолбэк
+   ============================================================ */
+
+@media (max-width: 640px) {
+    .stages-footer__stages {
+        grid-template-columns: 1fr;
+    }
+    .stages-footer__actions {
+        flex-direction: column;
+    }
+    .stages-footer__action {
+        width: 100%;
+        min-width: 0;
+    }
+}

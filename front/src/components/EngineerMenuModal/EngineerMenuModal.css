@@ -1,0 +1,512 @@
+/* ============================================================
+   Модалка мастера (EngineerMenuModal)
+   ============================================================ */
+
+.eng-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(780px, 94vw);
+    max-height: 92vh;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, .25);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow: hidden;
+}
+
+/* ---------- Служебные сообщения ---------- */
+.eng-modal__loading,
+.eng-modal__error {
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.eng-modal__loading { background: #F1F5F9; color: #64748B; }
+.eng-modal__error   { background: #FEF2F2; color: #991B1B; }
+
+/* ============================================================
+   Шапка
+   ============================================================ */
+
+.eng-modal__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.eng-modal__avatar {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #E0E7FF;
+    color: #4338CA;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+.eng-modal__avatar-dot {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #22C55E;
+    border: 2px solid #fff;
+}
+
+.eng-modal__title-wrap { flex: 1; min-width: 0; }
+.eng-modal__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.eng-modal__subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 2px 0 0;
+}
+
+.eng-modal__close {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   Тело: две колонки
+   ============================================================ */
+
+.eng-modal__body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+    min-height: 0;
+}
+
+.eng-modal__left,
+.eng-modal__right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+}
+
+.eng-modal__left {
+    border-right: 1px solid #E2E8F0;
+    padding-right: 20px;
+}
+
+/* ============================================================
+   Блоки
+   ============================================================ */
+
+.eng-modal__block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.eng-modal__block--grow {
+    flex: 1;
+    min-height: 0;
+}
+
+.eng-modal__block-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.eng-modal__block-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94A3B8;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+.eng-modal__block-subtitle {
+    font-size: 11px;
+    color: #CBD5E1;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* ============================================================
+   Бейдж смены
+   ============================================================ */
+
+.eng-modal__shift-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    width: fit-content;
+}
+.eng-modal__shift-badge--active {
+    background: #DCFCE7;
+    color: #166534;
+}
+.eng-modal__shift-badge--off {
+    background: #F1F5F9;
+    color: #64748B;
+}
+.eng-modal__shift-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.eng-modal__off-reason {
+    font-size: 12px;
+    color: #94A3B8;
+    margin: 2px 0 0;
+    line-height: 1.3;
+}
+
+/* ============================================================
+   Поля «Локация» / «Начало-Конец»
+   ============================================================ */
+
+.eng-modal__field {
+    display: flex;
+    gap: 6px;
+    font-size: 13px;
+}
+.eng-modal__field-label { color: #64748B; }
+.eng-modal__field-value { color: #0F172A; font-weight: 500; }
+
+.eng-modal__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 12px;
+    color: #64748B;
+}
+.eng-modal__row label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ============================================================
+   Список заявок инженера
+   ============================================================ */
+
+.eng-modal__orders {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.eng-modal__order {
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: #fff;
+}
+.eng-modal__order-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F172A;
+}
+.eng-modal__order-sub {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+.eng-modal__empty {
+    color: #94A3B8;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ============================================================
+   Оборудование
+   ============================================================ */
+
+.eng-modal__equipment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.eng-modal__equipment-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+.eng-modal__equipment-info { min-width: 0; }
+.eng-modal__equipment-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+}
+.eng-modal__equipment-meta {
+    font-size: 12px;
+    color: #94A3B8;
+    margin-top: 2px;
+}
+
+.eng-modal__equipment-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.eng-modal__equipment-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.eng-modal__equipment-count {
+    background: #22C55E;
+    color: #fff;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ============================================================
+   Маленькие кнопки (Вернуть / Забрать всё / Забрать всё)
+   ============================================================ */
+
+.eng-modal__mini-btn {
+    border: 1px solid #E2E8F0;
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0F172A;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+    white-space: nowrap;
+}
+.eng-modal__mini-btn:hover {
+    background: #F8FAFC;
+    border-color: #CBD5E1;
+}
+.eng-modal__mini-btn--danger {
+    background: #FEF2F2;
+    border-color: #FECACA;
+    color: #B91C1C;
+}
+.eng-modal__mini-btn--danger:hover {
+    background: #FEE2E2;
+    border-color: #FCA5A5;
+}
+
+/* ============================================================
+   Форма редактирования
+   ============================================================ */
+
+.eng-modal__edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #64748B;
+}
+
+.eng-modal__input {
+    width: 100%;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-size: 14px;
+    color: #0F172A;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.eng-modal__input:focus {
+    border-color: #22C55E;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, .15);
+}
+.eng-modal__textarea {
+    resize: vertical;
+    font-family: inherit;
+    min-height: 70px;
+}
+
+.eng-modal__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+.eng-modal__skill {
+    border: 1px solid #E2E8F0;
+    background: #fff;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.eng-modal__skill:hover {
+    border-color: #CBD5E1;
+    background: #F8FAFC;
+}
+.eng-modal__skill--active {
+    background: #DCFCE7;
+    border-color: #22C55E;
+    color: #166534;
+    font-weight: 500;
+}
+
+/* ============================================================
+   Футер
+   ============================================================ */
+
+.eng-modal__footer {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 12px;
+    padding-top: 6px;
+    border-top: 1px solid #E2E8F0;
+}
+
+.eng-modal__btn {
+    padding: 14px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    transition: filter .15s ease, transform .15s ease, background .15s ease;
+}
+.eng-modal__btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+.eng-modal__btn:not(:disabled):hover {
+    filter: brightness(.96);
+    transform: translateY(-1px);
+}
+
+.eng-modal__btn--outline {
+    background: #F1F5F9;
+    color: #0F172A;
+}
+.eng-modal__btn--danger {
+    background: #EF4444;
+    color: #fff;
+}
+.eng-modal__btn--success {
+    background: #22C55E;
+    color: #fff;
+}
+.eng-modal__btn--dark {
+    background: #0F172A;
+    color: #fff;
+}
+
+/* ============================================================
+   Оверлей для всплывающих форм (причина / выдача / возврат)
+   ============================================================ */
+
+.eng-modal__reason-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, .35);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.eng-modal__reason {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 24px;
+    width: min(380px, 90%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, .25);
+}
+
+.eng-modal__reason-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+.eng-modal__reason-subtitle {
+    font-size: 13px;
+    color: #64748B;
+    margin: -4px 0 4px;
+}
+
+.eng-modal__reason-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+}
+.eng-modal__reason-actions .eng-modal__btn {
+    padding: 12px 10px;
+    font-size: 13px;
+}
+
+/* ============================================================
+   Адаптив для узких экранов
+   ============================================================ */
+
+@media (max-width: 640px) {
+    .eng-modal__body {
+        grid-template-columns: 1fr;
+    }
+    .eng-modal__left {
+        border-right: none;
+        border-bottom: 1px solid #E2E8F0;
+        padding-right: 0;
+        padding-bottom: 14px;
+    }
+    .eng-modal__footer {
+        grid-auto-flow: row;
+        grid-auto-columns: auto;
+    }
+    .eng-modal__reason-actions {
+        grid-template-columns: 1fr;
+    }
+}

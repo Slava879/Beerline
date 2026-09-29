@@ -1,0 +1,92 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* серые (неактивные) верхние кнопки */
+.menu__button--disabled,
+.menu__button-opt:disabled,
+.menu__button-request:disabled,
+.menu__masters-button:disabled {
+    background: #E5E7EB !important;
+    color: #94A3B8 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
+
+/* активная распределённая заявка */
+.menu__distributed-card {
+    cursor: pointer;
+    transition: box-shadow .15s ease, transform .15s ease;
+}
+.menu__distributed-card:hover { transform: translateY(-1px); }
+.menu__distributed-card--active {
+    outline: 2px solid #FACC15;
+    box-shadow: 0 4px 14px rgba(250, 204, 21, .35);
+}
+
+/* подсказка в футере */
+.menu__hint { color: #94A3B8; font-size: 14px; padding: 8px 0; }
+.menu__hint--center { text-align: center; }
+.menu__hint--error { color: #DC2626; }
+
+.main.dispatcher {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Единственный скролл — у .menu__main.
+   .scroll-area больше НЕ создаёт свой скролл, чтобы
+   списки мастеров/заявок не обрезались. */
+.scroll-area {
+    overflow: visible;
+}
+
+.menu__sticky-footer button,
+.work-stages-footer button {
+    transition: background-color .15s ease, color .15s ease, transform .15s ease;
+    cursor: pointer;
+}
+.menu__sticky-footer button:hover,
+.work-stages-footer button:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+}
+
+.page {
+  font-family: var(--font-family);
+  font-weight: 400;
+  scroll-behavior: smooth;
+  scroll-padding-top: 98px;
+  scrollbar-gutter: stable;
+}
+
+.page__body {
+  min-width: 375px;
+  background-color: var(--bg-color);
+}
+
+.container {
+  width: min(var(--container-width), 100% - var(--container-padding) * 2);
+  margin-inline: auto;
+}
+
+img { object-fit: cover; }
+
+input { border: none; }
+input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: none;
+}
+
+a { text-decoration: none; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--main-color);
+  outline-offset: 2px;
+}

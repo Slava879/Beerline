@@ -1,0 +1,234 @@
+.urgent-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #64748b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.urgent-modal {
+    background-color: #ffffff;
+    width: 100%;
+    width: 480px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.urgent-modal-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.urgent-modal-header::after {
+    content: '';
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 0;
+    height: 1px;
+    background-color: #F1F5F9;
+}
+
+.urgent-header-left {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.urgent-icon-circle {
+    width: 32px;
+    height: 32px;
+    background-color: #FEF2F2; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EF4444; 
+    font-weight: 2.5;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.urgent-header-text h2 {
+    font-size: 16px;
+    color: #0F172A;
+}
+
+.urgent-header-text p {
+    font-size: 11px;
+    color: #64748B;
+}
+
+.urgent-close-btn {
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #94A3B8;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+}
+
+.urgent-close-btn:hover {
+    color: #4b5563;
+}
+
+.urgent-modal-body {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.urgent-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.urgent-form-group label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #64748B;
+}
+.urgent-form-group label_input {
+    font-size: 11px;
+    font-weight: bold;
+    color: #0F172A;
+}
+
+.urgent-required {
+    color: #EF4444;
+}
+
+.urgent-form-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 11px;
+    color: #0F172A;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #fff;
+    appearance: none; 
+}
+
+.urgent-form-input:focus {
+    border-color: #00E676; 
+}
+
+.urgent-select-wrapper {
+    position: relative;
+}
+
+.urgent-select-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.urgent-priority-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.urgent-priority-btn {
+    width: 138px;
+    padding: 12px 10px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    background-color: #F8FAFC;
+    font-size: 11px;
+    font-weight: bold;
+    color: #475569;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.urgent-priority-btn .urgent-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #DC2626;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.urgent-priority-btn.active {
+    display: flex;
+    border:2px solid #DC2626;
+    background-color: #FEF2F2; 
+    color: #DC2626; 
+}
+.fa-solid fa-chevron-down select-icon{
+    color: #64748B;
+    font-weight: 2px;
+}
+
+.urgent-modal-footer {
+    padding: 38px 24px 9px 24px;
+    display: flex;
+    gap: 15px;
+}
+
+.urgent-btn-submit {
+    flex: 2;
+    background-color: #00E676;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.urgent-btn-submit:hover {
+    background-color: #019f53;
+}
+
+.urgent-btn-cancel {
+    flex: 1;
+    background-color: #fff;
+    color: #475569;
+    border: 1px solid #CBD5E1;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.urgent-btn-cancel:hover {
+    background-color: #f3f4f6;
+}
+
+.urgent-priority-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;   /* резервируем место под рамку */
+  white-space: nowrap;
+}
+
+.urgent-priority-btn.active {
+  display: inline-flex;            /* display НЕ меняется при активации */
+  border: 2px solid #DC2626;
+}

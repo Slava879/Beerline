@@ -1,0 +1,107 @@
+.unallocated-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    cursor: pointer;
+    transition: border-color .15s ease, background .15s ease;
+}
+.unallocated-card:hover { border-color: #CBD5E1; background: #F8FAFC; }
+.unallocated-card--active {
+    border-color: #4363D8;
+    background: #F8FAFF;
+    box-shadow: 0 0 0 2px rgba(67, 99, 216, .15);
+}
+.unallocated-card--no-coords {
+    border-color: #FCD34D;
+    background: #FFFBEB;
+}
+.unallocated-card--no-coords.unallocated-card--active {
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, .25);
+}
+
+/* Отменённые */
+.unallocated-card--cancelled {
+    background: #FEF2F2;
+    border-color: #FECACA;
+    cursor: default;
+}
+.unallocated-card--cancelled:hover {
+    background: #FEF2F2;
+    border-color: #FECACA;
+}
+.unallocated-card--cancelled .unallocated-card__title,
+.unallocated-card--cancelled .unallocated-card__address {
+    color: #7F1D1D;
+    text-decoration: line-through;
+    text-decoration-color: rgba(127, 29, 29, .35);
+}
+
+.unallocated-card__header { display: flex; flex-direction: column; gap: 4px; }
+.unallocated-card__title-row {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.unallocated-card__title {
+    margin: 0; font-size: 14px; font-weight: 700; color: #0F172A;
+}
+.unallocated-card__type {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #EEF2FF;
+    color: #4338CA;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+.unallocated-card__cancelled {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    background: #DC2626;
+    color: #fff;
+}
+.unallocated-card__meta {
+    display: flex; gap: 10px; font-size: 12px; color: #64748B;
+    flex-wrap: wrap;
+}
+.unallocated-card__time { font-size: 12px; color: #B91C1C; }
+.unallocated-card__address {
+    margin: 0; font-size: 13px; color: #0F172A;
+    overflow-wrap: anywhere;
+}
+.unallocated-card__service { margin: 0; font-size: 12px; color: #475569; }
+.unallocated-card__warn {
+    margin: 4px 0 0; font-size: 12px; color: #B45309; font-weight: 500;
+}
+
+.unallocated-card__actions {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;
+}
+.unallocated-card__btn {
+    border: none; border-radius: 10px;
+    padding: 8px 12px; font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    transition: background .15s ease, transform .1s ease;
+}
+.unallocated-card__btn:active { transform: translateY(1px); }
+.unallocated-card__btn--coords  { background: #FEF3C7; color: #92400E; }
+.unallocated-card__btn--coords:hover  { background: #FDE68A; }
+.unallocated-card__btn--assign  { background: #4363D8; color: #fff; }
+.unallocated-card__btn--assign:hover  { background: #3552C4; }
+.unallocated-card__btn--cancel  { background: #FEE2E2; color: #B91C1C; }
+.unallocated-card__btn--cancel:hover  { background: #FECACA; }
+.unallocated-card__btn--restore {
+    background: #DCFCE7;
+    color: #166534;
+    font-weight: 600;
+}
+.unallocated-card__btn--restore:hover { background: #BBF7D0; }
